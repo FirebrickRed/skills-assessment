@@ -9,6 +9,12 @@ contacts.forEach(person => {
   newEntry.setAttribute('class', 'entry');
   newEntry.setAttribute('id', person.id);
 
+  if(person.id % 2 === 0) {
+    newEntry.style.background = '#1A1A1A';
+  } else {
+    newEntry.style.background = '#212121';
+  }
+
   let moreDetails = document.createElement('div');
   moreDetails.setAttribute('class', 'moreDetails');
 
