@@ -72,10 +72,12 @@ footer {
 }
 
 .moreDetails {
+  /* lunch break starting comit */
   display: none;
   flex-direction: column;
   position: absolute;
-  left: 212px;
+  left: 190px;
   background: #484848;
   padding: 10px;
+  padding-left: 30px;
 }
