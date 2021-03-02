@@ -36,7 +36,7 @@ header {
 .entry {
   display: flex;
   padding: 10px;
-
+  /* justify-content: space-between; */
 }
 
 .name {
@@ -54,4 +54,5 @@ header {
 
 .moreDetails {
   display: none;
+  flex-direction: column;
 }

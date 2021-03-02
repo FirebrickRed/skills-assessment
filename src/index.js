@@ -13,9 +13,6 @@ contacts.forEach(person => {
   moreDetails.setAttribute('class', 'moreDetails');
 
   newEntry.addEventListener('click', event => {
-    console.log('click', event);
-    console.log('click', event.path[0].className);
-    console.log('click', event.target.id);
     let id;
     if(event.path[0].className !== 'entry') {
       id = event.path[1].id-1;
@@ -27,15 +24,11 @@ contacts.forEach(person => {
     let email = document.querySelectorAll(".email");
     let phone = document.querySelectorAll(".phone");
     let md = document.querySelectorAll('.moreDetails');
-    console.log('md', md);
-    console.log('md', md[event.target.id]);
 
     if(isActive) {
       email.forEach(e => e.style.display = "none");
       phone.forEach(p => p.style.display = "none");
-      email[id].style.display = 'block';
-      phone[id].style.display = 'block';
-      md[id].style.display = 'block';
+      md[id].style.display = 'flex';
     } else {
       if(isEmail) {
         email.forEach(e => e.style.display = 'block');
@@ -59,16 +52,22 @@ contacts.forEach(person => {
   email.setAttribute('class', 'email');
   email.innerHTML = person.email;
 
+  let mdEmail = document.createElement('div');
+  mdEmail.innerHTML = person.email;
+
   let phone = document.createElement('div');
   phone.setAttribute('class', 'phone');
   phone.innerHTML = person.phoneNumber;
+
+  let mdPhone = document.createElement('div');
+  mdPhone.innerHTML = person.phoneNumber;
 
   let address = document.createElement('div');
   address.setAttribute('class', 'address');
   address.innerHTML = person.address;
 
-  moreDetails.appendChild(email);
-  moreDetails.appendChild(phone);
+  moreDetails.appendChild(mdEmail);
+  moreDetails.appendChild(mdPhone);
   moreDetails.appendChild(address);
 
   newEntry.appendChild(dot);
