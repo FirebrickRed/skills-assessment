@@ -6,3 +6,13 @@ body {
 header {
   color: white;
 }
+
+.green {
+  width: 10px;
+  height: 10px;
+  background: green;
+}
+
+.entry {
+  display: flex;
+}

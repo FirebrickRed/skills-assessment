@@ -1,0 +1,15 @@
+contacts = [{
+	"name": "Scott",
+	"email": "scott@mailinator.com",
+	"phoneNumber": "555.555.5555",
+  "address": "6539 Wilton Ave. Culver City CA 90234",
+  "dot": "green",
+  "id": 1
+}, {
+	"name": "Not Scott",
+	"email": "not_scott@mailinator.com",
+	"phoneNumber": "555.555.5555",
+  "address": "6539 Wilton Ave. Culver City CA 90234",
+  "dot": "red",
+  "id": 1
+}]
