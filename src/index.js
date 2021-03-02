@@ -95,4 +95,8 @@ document.getElementById('sorting').addEventListener('change', event => {
     phone.forEach(p => p.style.display = 'block');
     email.forEach(e => e.style.display = 'none');
   }
+
+  isActive = false;
+  let md = document.querySelectorAll(".moreDetails");
+  md.forEach(m => m.style.display = "none");
 })
