@@ -15,6 +15,9 @@ contacts.forEach(person => {
     newEntry.style.background = '#212121';
   }
 
+  let overlay = document.createElement('div');
+  overlay.setAttribute('class', 'overlay');
+
   let moreDetails = document.createElement('div');
   moreDetails.setAttribute('class', 'moreDetails');
 
@@ -27,26 +30,19 @@ contacts.forEach(person => {
     }
 
     isActive = !isActive;
-    let email = document.querySelectorAll(".email");
-    let phone = document.querySelectorAll(".phone");
     let md = document.querySelectorAll('.moreDetails');
     let entry = document.querySelectorAll('.entry');
+    let overlays = document.querySelectorAll('.overlay');
 
     if(isActive) {
-      email.forEach(e => e.style.display = "none");
-      phone.forEach(p => p.style.display = "none");
+      overlays.forEach(o => o.style.display = "block");
       md[id].style.display = 'flex';
       entry[id].style.background = '#484848';
+      overlays[id].style.display = "none";
     } else {
-      if(isEmail) {
-        email.forEach(e => e.style.display = 'block');
-        phone.forEach(p => p.style.display = 'none');
-      } else {
-        phone.forEach(p => p.style.display = 'block');
-        email.forEach(e => e.style.display = 'none');
-      }
       md.forEach(m => m.style.display = "none");
       entry.forEach((e, index) => e.style.background = index % 2 !== 0 ? '#1A1A1A' : '#212121' );
+      overlays.forEach(o => o.style.display = "none");
     }
   });
 
@@ -84,6 +80,7 @@ contacts.forEach(person => {
   newEntry.appendChild(email);
   newEntry.appendChild(phone);
   newEntry.appendChild(moreDetails);
+  newEntry.appendChild(overlay);
 
   contactslistDOM.appendChild(newEntry);
 });
