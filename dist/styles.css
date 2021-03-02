@@ -11,8 +11,32 @@ header {
   width: 10px;
   height: 10px;
   background: green;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+.red {
+  width: 10px;
+  height: 10px;
+  background: red;
+  border-radius: 50%;
+  margin-top: 10px;
 }
 
 .entry {
   display: flex;
+  padding: 10px;
+}
+
+.name {
+  padding: 5px;
+}
+
+.email {
+  padding: 5px;
+}
+
+.phone {
+  padding: 5px;
+  display: none;
 }
