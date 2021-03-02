@@ -47,25 +47,32 @@ footer {
 
 .entry {
   display: flex;
-  padding: 10px;
   border-top: 2px #151515 solid;
-  /* justify-content: space-between; */
 }
 
 .name {
-  width: 150px;
-  /* flex-grow: 1; */
+  width: 120px;
+  padding: 10px;
 }
 
 .email {
-  flex-grow: 1;
+  border-left: 2px solid #1C1C1C;
+  padding: 10px;
+  padding-left: 30px;
 }
 
 .phone {
   display: none;
+  border-left: 2px solid #1C1C1C;
+  padding: 10px;
+  padding-left: 30px;
 }
 
 .moreDetails {
   display: none;
   flex-direction: column;
+  position: absolute;
+  left: 212px;
+  background: #484848;
+  padding: 10px;
 }

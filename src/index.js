@@ -30,11 +30,13 @@ contacts.forEach(person => {
     let email = document.querySelectorAll(".email");
     let phone = document.querySelectorAll(".phone");
     let md = document.querySelectorAll('.moreDetails');
+    let entry = document.querySelectorAll('.entry');
 
     if(isActive) {
       email.forEach(e => e.style.display = "none");
       phone.forEach(p => p.style.display = "none");
       md[id].style.display = 'flex';
+      entry[id].style.background = '#484848';
     } else {
       if(isEmail) {
         email.forEach(e => e.style.display = 'block');
@@ -44,6 +46,7 @@ contacts.forEach(person => {
         email.forEach(e => e.style.display = 'none');
       }
       md.forEach(m => m.style.display = "none");
+      entry.forEach((e, index) => e.style.background = index % 2 !== 0 ? '#1A1A1A' : '#212121' );
     }
   });
 
