@@ -1,8 +1,52 @@
 let contactslistDOM = document.getElementById('contactsList');
 
+
+//insdead of using Id's could just use indexing to be more
+// accurate... will implement later if time permits.
+let isActive = false;
 contacts.forEach(person => {
   let newEntry = document.createElement('div');
   newEntry.setAttribute('class', 'entry');
+  newEntry.setAttribute('id', person.id);
+
+  let moreDetails = document.createElement('div');
+  moreDetails.setAttribute('class', 'moreDetails');
+
+  newEntry.addEventListener('click', event => {
+    console.log('click', event);
+    console.log('click', event.path[0].className);
+    console.log('click', event.target.id);
+    let id;
+    if(event.path[0].className !== 'entry') {
+      id = event.path[1].id-1;
+    } else {
+      id = event.target.id-1;
+    }
+
+    isActive = !isActive;
+    let email = document.querySelectorAll(".email");
+    let phone = document.querySelectorAll(".phone");
+    let md = document.querySelectorAll('.moreDetails');
+    console.log('md', md);
+    console.log('md', md[event.target.id]);
+
+    if(isActive) {
+      email.forEach(e => e.style.display = "none");
+      phone.forEach(p => p.style.display = "none");
+      email[id].style.display = 'block';
+      phone[id].style.display = 'block';
+      md[id].style.display = 'block';
+    } else {
+      if(isEmail) {
+        email.forEach(e => e.style.display = 'block');
+        phone.forEach(p => p.style.display = 'none');
+      } else {
+        phone.forEach(p => p.style.display = 'block');
+        email.forEach(e => e.style.display = 'none');
+      }
+      md.forEach(m => m.style.display = "none");
+    }
+  });
 
   let nameLabel = document.createElement('div');
   nameLabel.setAttribute('class', 'name');
@@ -19,10 +63,19 @@ contacts.forEach(person => {
   phone.setAttribute('class', 'phone');
   phone.innerHTML = person.phoneNumber;
 
+  let address = document.createElement('div');
+  address.setAttribute('class', 'address');
+  address.innerHTML = person.address;
+
+  moreDetails.appendChild(email);
+  moreDetails.appendChild(phone);
+  moreDetails.appendChild(address);
+
   newEntry.appendChild(dot);
   newEntry.appendChild(nameLabel);
   newEntry.appendChild(email);
   newEntry.appendChild(phone);
+  newEntry.appendChild(moreDetails);
 
   contactslistDOM.appendChild(newEntry);
 });
