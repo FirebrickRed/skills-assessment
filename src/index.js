@@ -46,7 +46,7 @@ contacts.forEach(person => {
   nameLabel.innerHTML = person.name;
 
   let dot = document.createElement('div');
-  dot.setAttribute('class', person.dot);
+  dot.setAttribute('class', `${person.dot} dot`);
 
   let email = document.createElement('div');
   email.setAttribute('class', 'email');

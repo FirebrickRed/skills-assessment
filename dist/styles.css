@@ -9,28 +9,23 @@ header {
   color: white;
 }
 
-.green {
+.dot {
   width: 10px;
   height: 10px;
-  background: #00ff00;
   border-radius: 50%;
   margin-top: 10px;
+}
+
+.green {
+  background: #00ff00;
 }
 
 .yellow {
-  width: 10px;
-  height: 10px;
   background: yellow;
-  border-radius: 50%;
-  margin-top: 10px;
 }
 
 .red {
-  width: 10px;
-  height: 10px;
   background: red;
-  border-radius: 50%;
-  margin-top: 10px;
 }
 
 .entry {
@@ -40,15 +35,12 @@ header {
 }
 
 .name {
-  padding: 5px;
 }
 
 .email {
-  padding: 5px;
 }
 
 .phone {
-  padding: 5px;
   display: none;
 }
 
