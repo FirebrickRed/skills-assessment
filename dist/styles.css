@@ -14,7 +14,15 @@ header {
 
 footer {
   box-shadow: 0px -4px 15px 0px #000000;
-  padding: 20px 10px;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#sorting {
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 1px 8px;
 }
 
 .dot {
